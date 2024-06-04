@@ -1,6 +1,8 @@
 package rodrigo.cordova.aplicacioncrud
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //mando a llamar
+        val txtTitulo = findViewById<TextView>(R.id.txtTitulo)
+        val txtDescripcion = findViewById<TextView>(R.id.txtDescripcion)
+        val txtFechaCreacion = findViewById<TextView>(R.id.txtFechaCreacion)
+        val txtEstado = findViewById<TextView>(R.id.txtEstado)
+        val btnAgregar = findViewById<Button>(R.id.btnAgregar)
+
+        
     }
 }
