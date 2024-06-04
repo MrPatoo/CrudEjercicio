@@ -26,6 +26,6 @@ class MainActivity : AppCompatActivity() {
         val txtEstado = findViewById<TextView>(R.id.txtEstado)
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
 
-        
+
     }
 }
