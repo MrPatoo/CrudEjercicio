@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import modelo.ClaseConexion
@@ -32,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         //mando a llamar
         val txtTitulo = findViewById<TextView>(R.id.txtTitulo)
-        val txtDescripcion = findViewById<TextView>(R.id.txtDescripcion)
-        val txtFechaCreacion = findViewById<TextView>(R.id.txtFechaCreacion)
-        val txtEstado = findViewById<TextView>(R.id.txtEstado)
-        val txtFechaFinalizacion = findViewById<TextView>(R.id.txtFechaFinalizacion)
+        val txtDescripcion = findViewById<TextView>(R.id.txtDescripcionCard)
+        val txtFechaCreacion = findViewById<TextView>(R.id.txtFechaCreacionCard)
+        val txtEstado = findViewById<TextView>(R.id.txtEstadoCard)
+        val txtFechaFinalizacion = findViewById<TextView>(R.id.txtFechaFinalizacionCard)
         val txtUsuario = findViewById<TextView>(R.id.txtUsuario)
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
 

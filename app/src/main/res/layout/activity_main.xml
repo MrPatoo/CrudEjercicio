@@ -42,25 +42,25 @@
         android:ems="10"
         android:hint="Título"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtDescripcion"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescripcionCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/txtEstado"
+        android:id="@+id/txtEstadoCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
         android:ems="10"
         android:hint="Estado"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtFechaFinalizacion"
-        app:layout_constraintStart_toStartOf="@+id/txtFechaCreacion"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacion" />
+        app:layout_constraintBottom_toTopOf="@+id/txtFechaFinalizacionCard"
+        app:layout_constraintStart_toStartOf="@+id/txtFechaCreacionCard"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacionCard" />
 
     <EditText
-        android:id="@+id/txtDescripcion"
+        android:id="@+id/txtDescripcionCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -68,7 +68,7 @@
         android:gravity="start|top"
         android:hint="Descripción"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/txtFechaCreacion"
+        app:layout_constraintBottom_toTopOf="@+id/txtFechaCreacionCard"
         app:layout_constraintStart_toStartOf="@+id/txtTitulo"
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
@@ -81,11 +81,11 @@
         android:hint="Usuario"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/btnAgregar"
-        app:layout_constraintStart_toStartOf="@+id/txtFechaFinalizacion"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaFinalizacion" />
+        app:layout_constraintStart_toStartOf="@+id/txtFechaFinalizacionCard"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaFinalizacionCard" />
 
     <EditText
-        android:id="@+id/txtFechaCreacion"
+        android:id="@+id/txtFechaCreacionCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -93,12 +93,12 @@
         android:ems="10"
         android:hint="Fecha creación"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtEstado"
-        app:layout_constraintStart_toStartOf="@+id/txtDescripcion"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+        app:layout_constraintBottom_toTopOf="@+id/txtEstadoCard"
+        app:layout_constraintStart_toStartOf="@+id/txtDescripcionCard"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcionCard" />
 
     <EditText
-        android:id="@+id/txtFechaFinalizacion"
+        android:id="@+id/txtFechaFinalizacionCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
@@ -106,8 +106,8 @@
         android:hint="Fecha finalización"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/txtUsuario"
-        app:layout_constraintStart_toStartOf="@+id/txtEstado"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
+        app:layout_constraintStart_toStartOf="@+id/txtEstadoCard"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstadoCard" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTickets"
