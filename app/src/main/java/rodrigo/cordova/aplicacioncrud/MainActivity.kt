@@ -1,5 +1,6 @@
 package rodrigo.cordova.aplicacioncrud
 
+import RecyclerViewHelpers.Adaptador
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -7,10 +8,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import modelo.ClaseConexion
+import modelo.tbTicket
 import java.util.UUID
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +38,39 @@ class MainActivity : AppCompatActivity() {
         val txtFechaFinalizacion = findViewById<TextView>(R.id.txtFechaFinalizacion)
         val txtUsuario = findViewById<TextView>(R.id.txtUsuario)
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
+
+        val rcvTicket = findViewById<RecyclerView>(R.id.rcvTickets)
+        rcvTicket.layoutManager= LinearLayoutManager(this)
+
+        fun obtenerTickets(): List<tbTicket>{
+            val objConexion = ClaseConexion().cadenaConexion()
+
+            val statement = objConexion?.createStatement()
+            val resultSet= statement?.executeQuery("Select * from tbTicket")!!
+
+            val listaTicket = mutableListOf<tbTicket>()
+            while (resultSet.next()){
+                val uuid = resultSet.getString("NumeroTicket")
+                val tituloTicket = resultSet.getString("tituloTicket")
+                val descripcion = resultSet.getString("descripcion")
+                val fechaCreacion = resultSet.getString("fechaCreacion")
+                val estado = resultSet.getString("estadoTicket")
+                val fechaFinalizacion = resultSet.getString("fechaFinalizacion")
+                val usuario = resultSet.getString("usuario")
+
+                val valoresJuntos = tbTicket(uuid, tituloTicket, descripcion, fechaCreacion, estado, fechaFinalizacion, usuario)
+                listaTicket.add(valoresJuntos)
+            }
+                return listaTicket
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val ticketDB = obtenerTickets()
+            withContext(Dispatchers.Main){
+                val adapter = Adaptador(ticketDB)
+                rcvTicket.adapter = adapter
+            }
+        }
 
         //programo boton
         btnAgregar.setOnClickListener {
