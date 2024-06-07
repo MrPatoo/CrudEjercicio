@@ -1,6 +1,7 @@
 package RecyclerViewHelpers
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import rodrigo.cordova.aplicacioncrud.R
@@ -14,5 +15,9 @@ class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val txtFechaCreacionCard = view.findViewById<TextView>(R.id.txtFechaCreacionCard)
     val txtFechaFinalizacionCard = view.findViewById<TextView>(R.id.txtFechaFinalizacionCard)
     val txtUsuarioCard = view.findViewById<TextView>(R.id.txtUsuarioCard)
+
+    //botones de card
+    val btnEditar: ImageView = view.findViewById(R.id.imgEditar)
+    val btnEliminar: ImageView = view.findViewById(R.id.imgEliminar)
 
 }
