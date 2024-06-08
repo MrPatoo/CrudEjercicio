@@ -55,5 +55,11 @@ class login : AppCompatActivity() {
                 }
             }
         }
+
+        //para ir a la pantalla register*******************************************************************
+        btnCrearCuenta.setOnClickListener{
+            val intent = Intent(this, registrar::class.java)
+            startActivity(intent)
+        }
     }
 }

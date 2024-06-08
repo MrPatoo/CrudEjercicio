@@ -1,6 +1,5 @@
 create table tbUsuario(
 UUID_Usuario varchar2(50) primary key not null,
-nombre varchar2(50) not null,
 correo varchar2(50) not null,
 contrasena varchar2(50) not null                  
 );
