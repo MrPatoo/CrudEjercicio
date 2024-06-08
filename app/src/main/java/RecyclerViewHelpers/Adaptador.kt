@@ -196,7 +196,7 @@ class Adaptador(private var Datos: List<tbTicket>):RecyclerView.Adapter<ViewHold
             dialog.show()
         }
 
-        
+
     }
 
 }
