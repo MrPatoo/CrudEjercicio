@@ -187,7 +187,8 @@ class Adaptador(private var Datos: List<tbTicket>):RecyclerView.Adapter<ViewHold
 
 
             //botones
-            builder.setPositiveButton("Actualizar"){dialog, switch -> actualizarDatos(cuadroTexto.text.toString(),ticket.tituloTicket, ticket.descripcion, ticket.fechaCreacion, ticket.estadoTicket, ticket.fechaFinalizacion, ticket.usuario)}
+            builder.setPositiveButton("Actualizar"){dialog, switch ->
+                actualizarDatos(txtNewTituloTicket.text.toString(), txtNewDescripcion.text.toString(), txtNewFechaCreacion.text.toString(), txtNewEstadoTicket.text.toString(), txtNewFechaFinalizacion.text.toString(), txtNewUsuario.text.toString(), item.uuid)}
 
             builder.setNegativeButton("Cancelar"){dialog, switch -> dialog.dismiss()}
 
@@ -195,15 +196,7 @@ class Adaptador(private var Datos: List<tbTicket>):RecyclerView.Adapter<ViewHold
             dialog.show()
         }
 
-
-
-
-
-
-        //, ticket.tituloTicket, ticket.descripcion, ticket.fechaCreacion, ticket.estadoTicket, ticket.fechaFinalizacion, ticket.usuario
-
-
-
+        
     }
 
 }
